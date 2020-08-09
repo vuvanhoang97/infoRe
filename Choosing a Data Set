@@ -9,7 +9,16 @@ for source, filepath in filepath_dict.items():
     df_list.append(df)
     df = pd.concat(df_list)
     print(df.iloc[0])
+    
+sentences = ['John likes ice cream', 'John hates chocolate.']
+from sklearn.feature_extraction.text import CountVectorizer
+    vectorizer = CountVectorizer(min_df=0, lowercase=False)
+    vectorizer.fit(sentences)
+    vectorizer.vocabulary_
+{'John': 0, 'chocolate': 1, 'cream': 2, 'hates': 3, 'ice': 4, 'likes': 5} 
+
+vectorizer.transform(sentences).toarray()
 
 
-
+https://archive.ics.uci.edu/ml/datasets/Sentiment+Labelled+Sentences
     
